@@ -115,6 +115,7 @@
 	})();
 	MyImage.setSrc( 'http:// imgcache.qq.com/music/photo/k/000GGDys0yA0Nk.jpg' );
 
+	// 图片懒加载
 	var myImage = (function(){
 		var imgNode = document.createElement( 'img' );
 		document.body.appendChild( imgNode );
@@ -149,6 +150,7 @@
 	<input type="checkbox" id="9"></input>9
 </body>
 
+<!-- 合并http请求 -->
 <script type="text/javascript">
 	//接下来，给这些checkbox 绑定点击事件，并且在点击的同时往另一台服务器同步文件：
 	var synchronousFile = function( id ){
@@ -229,7 +231,7 @@
 			console.log( Array.prototype.join.call( arguments ) );
 		}
 	};
-
+// 虚拟代理惰性加载
 	var miniConsole = (function(){
 		var cache = [];
 		var handler = function( ev ){
@@ -284,7 +286,7 @@
 	mult( 2, 3 ); // 输出：6
 	mult( 2, 3, 4 ); // 输出：24
 	//现在加入缓存代理函数：
-
+    // 缓存代理
 	var proxyMult = (function(){
 		var cache = {};
 		return function(){
