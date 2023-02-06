@@ -49,7 +49,7 @@
 	plane.fire();
 	// 分别输出： 发射普通子弹、发射导弹、发射原子弹
 
-
+// 给函数动态增加功能 - 污染原型
 	Function.prototype.before = function( beforefn ){
 		var __self = this; // 保存原函数的引用
 		return function(){ // 返回包含了原函数和新函数的"代理"函数
@@ -100,7 +100,7 @@ Function.prototype.after = function( afterfn ){
 		alert (4);
 	});
 
-
+// 给函数动态增加功能 不污染原型
 	var before = function( fn, beforefn ){
 		return function(){
 			beforefn.apply( this, arguments );
@@ -157,7 +157,7 @@ document.getElementById( 'button' ).onclick = showLogin;
 </html>
 
 
-
+<!-- 表单验证 -->
 <html>
 <body>
 	用户名：<input id="username" type="text"/>
